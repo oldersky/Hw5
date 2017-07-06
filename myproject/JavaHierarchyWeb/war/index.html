@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="jquery-2.1.0.min.js"></script>
+<script>
+	$(function() {
+		$('#check').click(function() {
+					var artistGroup = $('#artistGroup').val();
+					var fans = $('#fans').val();
+					var poi = $('#poi').val();
+					var staff = $('#staff').val();
+					var rope = $('#rope').val();
+					var minutes = $('#minutes').val();
+
+					var danceArtistGroup = $('#danceArtistGroup').val();
+					var dancersNumber = $('#dancersNumber').val();
+
+					var singArtistGroup = $('#singArtistGroup').val();
+					var numberOfSongs = $('#numberOfSongs').val();
+
+					$('#result').load("/javahierarchyweb?artistGroup=" + artistGroup + "&fans=" + fans
+							+ "&poi=" + poi + "&staff=" + staff + "&rope="
+							+ rope + "&minutes=" + minutes
+							+ "&danceArtistGroup=" + danceArtistGroup
+							+ "&dancersNumber=" + dancersNumber
+							+ "&singArtistGroup=" + singArtistGroup
+							+ "&numberOfSongs=" + numberOfSongs);
+				});
+
+	});
+</script>
+
+</head>
+
+
+
+<body>
+	<h1>Конструктор мероприятия</h1>
+
+	<p>Вы - организатор небольшого университетского мероприятия. Вам
+		предстоит выбрать 3 коллектива разных жанров для того, чтобы
+		мероприятие состоялось. При этом ваш бюджет 40000 рублей. Заполните
+		поля ниже, и мы проверим, сможете ли вы уложиться в бюджет.</p>
+
+	<b>Выберите группу артистов Огненного шоу:</b>
+	<br>
+	<p>
+		<select id="artistGroup">
+			<option disabled>Выберите коллектив</option>
+			<option value="Wind Theater">Wind Theater</option>
+			<option value="Prana">Prana</option>
+			<option value="Fire">Fire</option>
+			<option value="Magic 8">Magic 8</option>
+		</select>
+	</p>
+
+	<b>Выберите количество артистов для каждого вида реквизита:</b>
+	<br>
+	
+		<table>
+		<tr>
+			<td><input id="fans" type="text"></td>
+			<td><input id="poi" type="text"></td>
+			<td><input id="staff" type="text"></td>
+			<td><input id="rope" type="text"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		</table>
+
+	
+
+	<p>Напишите предполагаемое время выступления коллектива в минутах</p>
+	<input id="minutes" type="text">
+	<br>
+	<br>
+
+	<b>Выберите группу танцоров:</b>
+	<br>
+	<p>
+		<select id="danceArtistGroup">
+			<option disabled>Выберите коллектив</option>
+			<option value="Plastica">Plastica</option>
+			<option value="let's Dance">let's Dance</option>
+			<option value="Come Together">Come Together</option>
+			<option value="MagicDance">MagicDance</option>
+		</select>
+	</p>
+
+	<p>Напишите предполагаемое количесто танцоров</p>
+	<input id="dancersNumber" type="text">
+	<br>
+	<br>
+
+	<b>Выберите музыкальную группу:</b>
+	<br>
+	<p>
+		<select id="singArtistGroup">
+			<option disabled>Выберите коллектив</option>
+			<option value="Cake">Cake</option>
+			<option value="Marco Polo">Marco Polo</option>
+			<option value="Sing4Free">Sing4Free</option>
+			<option value="DDT">DDT</option>
+		</select>
+	</p>
+
+	<p>Напишите предполагаемое количесто песен</p>
+	<input id="numberOfSongs" type="text">
+
+	<form>
+		<button id="check" type="button">Проверить выбор</button>
+	</form>
+
+	<p>Результат:</p>
+	<div id="result">
+		<i>После нажатия на кнопку появится здесь</i>
+	</div>
+
+</body>
+</html>
